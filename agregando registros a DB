@@ -1,0 +1,25 @@
+<?php
+print('<? xml version="1.0" encodingo="UTF-8"?>');
+
+$nombre = $_POST['nombre'];
+$apellido = $_POST['apellido'];
+$mail = $_POST['mail'];
+$direccion = $_POST['direccion'];
+$telefono = $_POST['telefono'];
+
+
+$link = mysqli_connect("localhost", "root", "matrox85", "tutorial");
+$sql = "INSERT INTO miniagenda ('nombre', 'apellido', 'mail', 'direccion', 'telefono')";
+$sql = "VALUES ('".$_POST["nombre"]."', '".$_POST["apellido"]."', '".$_POST["mail"]."', '".$_POST["direccion"]."' , '".$_POST["telefono"]."' )";
+$result = mysqli_query($link, $sql);
+$msg = "¡Gracias, hemos recibido sus datos correctamente.\n!";
+?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+<body>
+<?php
+	print($msg);
+?>
+</body>
+</html>
