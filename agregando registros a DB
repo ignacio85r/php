@@ -10,7 +10,7 @@ $telefono = $_POST['telefono'];
 
 $link = mysqli_connect("localhost", "root", "matrox85", "tutorial");
 $sql = "INSERT INTO miniagenda ('nombre', 'apellido', 'mail', 'direccion', 'telefono')";
-$sql = "VALUES ('".$_POST["nombre"]."', '".$_POST["apellido"]."', '".$_POST["mail"]."', '".$_POST["direccion"]."' , '".$_POST["telefono"]."' )";
+$sql.= "VALUES ('".$_POST["nombre"]."', '".$_POST["apellido"]."', '".$_POST["mail"]."', '".$_POST["direccion"]."' , '".$_POST["telefono"]."' )";
 $result = mysqli_query($link, $sql);
 $msg = "¡Gracias, hemos recibido sus datos correctamente.\n!";
 ?>
